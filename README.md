@@ -1,7 +1,7 @@
 # Data-Structures
 This an accumulation of homeworks, projects, and labs for my Data Structures class at Tsinghua University during my first semester in my second year. 
 
-教师：
+教师：邓俊辉
 课程号： 30240184 
 学分：4
 学时：64 
