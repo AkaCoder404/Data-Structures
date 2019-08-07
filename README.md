@@ -1,5 +1,5 @@
-# Sophmore-Year-Semester-1
-This is an accumulation of all projects, labs, and homeworks completed for the first semester of my second year at Tsinghua University
+# Data-Structures
+This an accumulation of homeworks, projects, and labs for my Data Structures class at Tsinghua University during my first semester in my second year. 
 
 教师：
 课程号： 30240184 
