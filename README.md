@@ -1,12 +1,7 @@
 # Data-Structures
 This an accumulation of homeworks, projects, and labs for my Data Structures class at Tsinghua University during my first semester in my second year. 
 
-教师：邓俊辉
-课程号： 30240184 
-学分：4
-学时：64 
-课程介绍：http://dsa.cs.tsinghua.edu.cn/~deng/ds/tsinghua/
-教材：数据结构（C++语言版）
+教师：邓俊辉 | 课程号： 30240184 | 学分：4 | 学时：64 |课程介绍：http://dsa.cs.tsinghua.edu.cn/~deng/ds/tsinghua/ | 教材：数据结构（C++语言版）
 
 数据结构讲解在计算机中如何有效地表示数据，如何合理地组织和处理数据，是计算机科学与技术专业的重要基础，也是设计与实现高效算法的基石。 
 本课程旨在传授各类数据结构设计和实现的基本原理与方法，以及算法设计和分析的主要技巧与工具，并通过强化的编程实践，
