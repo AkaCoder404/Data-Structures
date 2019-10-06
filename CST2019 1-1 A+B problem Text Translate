@@ -1,0 +1,63 @@
+Description
+  Sorry, this problem is actually an A*B problem
+  Teacher 邓俊辉's homework is often too simple, it only requires data type int. The teaching assistants aggreed it is absolutely necessary to introduce Python's long int type. For example, it can calculate integer of hundreds of bits. However, before introducing long int, the teacher assistants agreed to let you implement long int multiplication yourself to deepen your understanding.
+  
+Input
+  Total inputs are n + 1 rows
+  First row includes an integer n, representing how many groups of numbers you have to multiply together
+  The following n rows each contain two non negative integers, a and b.
+  
+Output
+  Total Output includes n rows
+  Each row contains the product of two numbers, a and b
+  
+Input Example
+  3
+  1 1
+  2 2
+  123123 789789
+  
+  *this example is the first test point
+  *in the programming homework of this class, problems without all "int" inputs will use the sample as the first test point to faciliate debugging
+  
+Output Example
+  1
+  4
+  97241191047
+  
+  *note: each line of the example answer has a newline character, however, when OJ compares text, it usually ignores the newline character and end of text. 
+    
+Scope of Data
+  1 <= n <= 500
+  0 <= a < 10^500
+  0 <= b < 10^500
+  
+Resource Limits
+  Time: 1 Second
+  Memory: 256 MB
+---------------------------------------------------------------------------------------------------------
+Tool
+
+Here we provide a way to test the correctness of the program: 对拍
+
+对拍 is mainly used in the following scenario: I have a data generator, a program A, a program B. Program A and B are programs that perform the same task. We use a pair of 拍脚本 (scripts), each time calling the data generator, and giving the data to A and B respectively, to get two sets of output to determine whether the program is running correctly by comparing the output consistency. The reason for this is that often we can think of a simple method A, but inefficient, and the efficiency of the efficent program B can not be guarenteed, through this process we can simply evaluate and find the data that makes B error for debugging.
+
+对拍 is a debugging technique. This assigniment provides a set of tools for 对拍, you can learn to use and use the code debugging afterwards.
+
+This toolkit consists mainly of three parts:
+  1. check.py implements the ability to 对拍, which is written in Python3
+  2. a.cpp and b.py are programs A and B. For a.cpp, you need to compile before using it
+  3. datamaker.py is a data generator written in Python3 that can generate a set of data and output it to standard output.
+  
+How to use this tool:
+  1. Replace a.cpp and b.py with the ones you need to 对拍, or do not replace them, and then compile the programs you need to compile.
+  2. Set relevant paramters in datamaker.py
+  3. Run check.py: while running check.py, you must specify programs A and B, as well as the data generator's run commands.
+  
+For example,
+In Linux: python3 check.py ./a "python3 b.py" "python3 datamaker.py"
+In Windows: python3 check.py a.exe "python3 b.py" "python3 datamaker.py"
+
+Reminder
+  
+  
