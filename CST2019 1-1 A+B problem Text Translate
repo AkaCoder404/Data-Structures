@@ -59,5 +59,16 @@ In Linux: python3 check.py ./a "python3 b.py" "python3 datamaker.py"
 In Windows: python3 check.py a.exe "python3 b.py" "python3 datamaker.py"
 
 Reminder
+  For all problems, try to optimize your algorithm and make sure it runs correctly. The 19th and 20th examples are often the largest examples of the entire problem (or the highest boundary conditions), and special cases and boundary conditions may deliberatly be constructed.
+  Even 64-bit integers, because of the limit storage bytes, we cannot fully represent the exact value of a large integer (it can only distinguish 2^64 different values), and cannot represent two multipliers, paradox cauclations. For larger integer operations, other methods have to be used at this time, which we call high-precision algorithms. The example below shows one simple method of high-precision addition.
   
+Example
+    12345678910111213 + 1111111111111111111
+Use two different Arrays
+    a[] = {3, 1, 2, 1, 1, 1, 0, 1, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+    b[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
   
+- The two arrays respecitively store the values and add them bit by bit. After each bit is added, it is then judged whether the sum is greater than 10, and the "carry" operation can be performed.
+- For high-precision multiplication, the problem is correspondingly more complicated. Similar to the addition method, there are some problems worth considering in the process.
+  1. How should these two integrers be stored? Binary? 10 hex? (or other), Lowest unit first? Highest Unit first?
+  2. What algorithm does the large integer multiplication itself have (you can check the corrsponding data yourself)? What kind of algorithm can better adapt to the data size of this problem?
