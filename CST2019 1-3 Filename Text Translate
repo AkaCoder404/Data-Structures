@@ -1,0 +1,41 @@
+Description
+  Xiao Y found that the file name submitted by everyone was not standardized during the correction work, which gavehim a headache. As a patient with obsessive compulsive disorder, he decide to manually regulate the file name of everyone. But some people have a particularly long file name, and he wants to know how many times it needs to be modified to make the string A into the string B. Of course, we will choose to give up the name of the file whose cost is more than K.
+  
+  Define a modification cost:
+  
+  1. Insert a character K at the i-th position
+    ...(Si−1)(Si)(Si+1)...->(Si−1)(K)(Si)(Si+1)...
+  2. Delete the ith character
+    ...(Si−1)(Si)(Si+1)...->(Si−1)(Si+1)...
+
+Input
+  In total there are 3 lines. 
+  The first lines includes 3 integers N, M, K, which represent the length of the original string A, the length of the target string B and the maximum number of modifications of the limit.
+  The next 2 lines contain the original string A and the target string B, respectively.
+  
+Output
+  Ouput one line, if the minimum number of modifications is equal to or less than k,then output the lowest amount of modifications necessary, or else output -1.
+
+Sample Input
+  10 11 5
+  9873007613
+  87300676513
+  
+  *this is the first test case
+  *in the problems given, problems with non-full integer inputs will sometimes use the sample as the first test case.
+
+Sample Output
+  3
+  
+  *OJ ignores newline characters and end of text.
+  
+Data Scope
+  n, m <= 501000
+  k <= 100
+  
+Resource Limit
+  Time: 1 sec
+  Memory: 256 MB
+  
+Note
+  Dynamic 
