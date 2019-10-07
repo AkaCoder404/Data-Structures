@@ -1,0 +1,44 @@
+Description 
+  Xiao Q has a great interest towards computational geography. He often dazes at the Cartesian Coordinate system, thinking of some interesting questions. Today, he thought of a very interesting topic.
+  First, Xiao Q picks n different points on the positive semi-x-axis and positive semi-y-axis.  Then he connects the points on the x-axis to the points on the y-axis (one-to-one correlation). Also making sure that no lines intersect. Xiao Q determines that there is only one such method. At the end, Xiao Q will give m queries. For each query, there will be a point P(Px,Py). How many intersections will there be between line segment OP and the n line segments?
+  Xiao Q found out that you are studying data strutures, and hopes you can help him answer this difficult question.
+  
+Inputs
+  Line 1: positive integer n, representing the amount of lines
+  Line 2: n positive integers, representing the chosen point on the x axis
+  Line 3: n positive integers, representing the chosen point on the y axis
+  Line 4: m positive integers, representing the amount of queries
+  The following m lines, each line includes positiive integer Px, Py, representing the x-coordiante, y-coordinate of the query.
+
+Outputs
+  Total m lines, each lines has a non-negative integer, it is the answer to the respective query.
+  
+Sample Input:
+  3 
+  4 5 3
+  3 5 4
+  2
+  1 1
+  3 3
+  
+Sample Output
+  0
+  3
+
+Sample Explanation
+  3 lines: (3,0)-(0,3), (4,0)-(0,4), (5,0)-(0,5)
+  (0,0)-(1,1) does not intersect with any of them, answer is 0
+  (0,0)-(3,3) intersects with each of them, answer is 3
+  
+Data Scope
+  1 <= n <= 200,000
+  1 <= m <= 200,000
+  1 < horizontal/vertical coordiantes < 2^31
+  
+Resource Limits
+  Time: .5 sec
+  Memory: 256 MB
+
+Note:
+  - 二分查找 Binary Search
+  - ToLeft测试
