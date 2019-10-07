@@ -1,0 +1,164 @@
+Question Origin
+  Tsinghua Online Judge, Author hzchwcmhf, Tony
+  
+Description
+  Because (9) is genius, I often process some textual information
+
+But because there is so much to process, I invented the perfect text editor. The editor has two cursors, so (9) can insert and delete text in two places at the same time. In addition to the normal editing functions, this editor has some functions that only (9) knows the usefulness, such as flipping the text between the two cursors. One day, (9) lost his perfect text editor, but she still has a lot of text to deal with. So she wants to ask the smart and intellgient you to help her achieve some of the functions of a perfect text editor.
+
+Functions listed below:
+
+Function Name   | Command | Description
+< (move left)   | <w      | w is a character, not "L" or "R", which means whether it is left cursor or right cursour (the same below). This command moves the selected cursour to the left and does not move if it is already the leftmost. "T" is output when the command is executed successfuly, otherwise (the cursour is already at the leftmost end) and "F" is the output.
+> (move right)  | >w      | W is same as above, unlke the F command, this command moves the cursor to the right. "T" is the output when the command is executed successfully, otherwise "F" is output (the cursor is already at the far right)
+I (insert)      | I w c   | W is same as above. c is a visible character (33 <= ascii code <= 126), which menas that the character is alwasy inserted to the left of the cursour. This command always outputs "T"
+D (delete)      | D w     | w is the same as above. Represents the deleation of one character to the right of the cursor. "T" is the output when the command is executed successfuly, otherwise "F" is output (there is no character to the right of the cursor)
+R (reverse)     | R       | represents the character between the left and right cursors. This can only be  executed when the left cursor is to the left of the right cursor (the two cursors cannot be executed when they are coincident). "T" is output when the command is executed successfully., otherwise "F" is input. 
+S (show)        | S       | Shows the text currently being processed. This command only outputs text and does not output "T" or "F".
+  
+There is a certain content in the text editor at the beggining, the left cursor is to the left of the first character, and the right cursor si to the right of the last cursor. 
+
+Note: In the insert and delete operations, the relative left and right positions of the cursor and the text that are not manipulated remain unchanged. In particular, if the two cursors overlap, they still overlap after the operation.
+
+Input: 
+  First Row: The inital content of text editor
+  Second Row: Positive integer N, representing N amount of operations
+  Following N rows, each row has a command
+Output:
+  For each command, execute and output as required in the table above.
+  
+Sample Input
+  9
+  42
+  > L
+  I L t
+  I R '
+  < R
+  < R
+  I R -
+  I L n
+  I L s
+  I L i
+  I R b
+  I L a
+  I R -
+  I L k
+  I L a
+  > L
+  R
+  > R
+  > R
+  > R
+  > R
+  > R
+  < L
+  < L
+  < L
+  R
+  < L
+  < L
+  < L
+  < L
+  < L
+  < L
+  < L
+  R
+  > L
+  > L
+  < R
+  < R
+  < R
+  D L
+  D L
+  D L
+  S
+Sample Output
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  F
+  F
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  F
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  T
+  9-is-baka
+  
+Sample Explination
+Sample Input  | Sample Output | Sample Explanation
+9             |               | [9] ("[" left cursor, "]" right cursor)
+42            |               | 
+> L           | T             | 9[]
+I L t         | T             | 9t[]
+I R '         | T             | 9t'[]
+< R           | T             | 9t]'[
+< R           | T             | 9]t'[
+I R -         | T             | 9-]t'[
+I L n         | T             | 9-]t'n[
+I L s         | T             | 9-]t'ns[
+I L i         | T             | 9-]t'nsi[
+I R b         | T             | 9-b]t'nsi[
+I L a         | T             | 9-b]t'nsia[
+I R -         | T             | 9-b-]t'nsia[
+I L k         | T             | 9-b-]t'nsiak[
+I L a         | T             | 9-b-]t'nsiaka[
+> L           | F             | 9-b-]t'nsiaka[ (Already at End, cannot be moved any futher
+R             | F             | 9-b-]t'nsiaka[ (Left mouse position bigger than right mouse position, fail)
+> R           | T             | 9-b-t]'nsiaka[
+> R           | T             | 9-b-t']nsiaka[
+> R           | T             | 9-b-t'n]siaka[
+> R           | T             | 9-b-t'ns]iaka[
+> R           | T             | 9-b-t'nsi]aka[
+< L           | T             | 9-b-t'nsi]ak[a
+< L           | T             | 9-b-t'nsi]a[ka
+< L           | T             | 9-b-t'nsi[]aka
+R             | F             | 9-b-t'nsi[]aka (left cursor is equal to right cursor, fail)
+< L           | T             | 9-b-t'ns[i]aka
+< L           | T             | 9-b-t'n[si]aka
+< L           | T             | 9-b-t'[nsi]aka
+< L           | T             | 9-b-t[‘nsi]aka
+< L           | T             | 9-b-[t‘nsi]aka
+< L           | T             | 9-b[-t‘nsi]aka
+< L           | T             | 9-[b-t‘nsi]aka
+R             | T             | 9-[isn't-b]aka
+> L           | T             | 9-i[sn't-b]aka
+> L           | T             | 9-is[n't-b]aka
+< R           | T             | 9-is[n't-]baka
+< R           | T             | 9-is[n't]-baka
+< R           | T             | 9-is[n']t-baka
+D L           | T             | 9-is[']t-baka 
+D L           | T             | 9-is[]t-baka (notice that position of cursor doesn't change)
+D L           | T             | 9-is[]-baka
+S             | 9-is-baka     | 9-is[] baka
