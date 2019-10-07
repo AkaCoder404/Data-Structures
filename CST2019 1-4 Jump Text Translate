@@ -1,0 +1,42 @@
+Description
+  A flea is practicing jumping, it has n grids in front of it, numbered from 1 ~ n. In the beggining, the flea was on the 1st grid.
+  The goal of the flea is to jump from the first grid to the nth grid by one or more jumps. It is known that when the flea is on the i-th (1 <= i < n) grids, it can take t[i] (0 < t[i] < 10^9) unit time to jump to satisfy l[i] <= j <= r[i] on the j-th grid.
+  
+  In addition, all l[i] and r[i] satisfy
+    1. i < l[i] <= r[i] <= n
+    2. l[i] <= l[i+1]
+    3. r[i] <= r[i+1]
+    
+  Now, the flea wants to minimize the total time of the jump, can you help it？
+  
+Input
+  Line 1： positive integer n
+  Following n - 1 lines, the i-th line includes 3 integers, l[i], r[i], t[i]， it's meaning is described in the description. 
+  
+Output
+  1 row 1 integer, indicates the minimum time required for the flea to pass through the number 1 grid to the number n grid.
+  
+Sample Input
+  5
+  2 4 1
+  3 4 10
+  4 5 20
+  5 5 100
+
+Sample Output
+  21
+  
+Sample Explanation
+  Optimal Soultion is 1 -> 3 -> 5
+  
+Data Scope
+  2 <= n <= 1,000,000
+
+Resource Restrictions
+  Time: 0.5 sec
+  Memory: 256 MB
+  
+Note:
+  Dynamic
+  Queue
+  
