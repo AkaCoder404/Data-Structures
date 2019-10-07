@@ -1,0 +1,51 @@
+Description
+"The world's general trend, the long-term must be combined, the long-term must be divided", the same is true of the stock market: new shares are continuously issued, and old stocks have been withdrawn. The period from issue to exit is called the active period of the stock.
+
+For the sake of simplicity, it may be assumed here that the active period is based on the trading day, and the (zeroth) day of the stock market opening is used as a unified starting point. For example, if Stock A “issued on Day 123 and exits on Day 130”, its active period is Days 123-129 for a total of 7 days, recorded as [123, 130). In addition, it may be assumed that the prices of the stocks remain unchanged during the period of their activities – otherwise, they may be equivalent to the exit of the original stock and issue a stock with updated pricing. Although the stock market of Q Kingdom cannot be refined, it also has its own unique features. In the country's stock market, the active periods of different stocks are prohibited from being included in each other. For example, whether it is [100, 150) and [120, 130), [120, 130) and [120, 150), [100, 130) and [120, 130), or even [120, 130) and [120 , 130), neither will be the active period of the stock at the same time. In other words, there are no more than one stock issued and delisted each day.
+
+Mr. M is a recognized god of the Q Kingdom, and his strategy is both safe and simple. The so-called security means that the total amount of investment at any time remains fixed, thus ensuring limited risk. The so-called simplicity means that every day, all the investment is concentrated on the purchase of the lowest price of the stock on the day (for which it may be necessary to sell the original stock, the time required for the transaction is negligible), so his shareholding Staying the best every day – in the Q Kingdom, this is the primary indicator of stock market returns.
+
+Input
+  First row has 1 positive integer N
+  The following 2N rows, Describes the history of stocks in ascending order of date, including events in the following two format.
+  
+  D X // A stock is issued on the Dth day after the last event, and X shares can be purchased according to Mr. M’s investment amount.
+  D   // There is a stock delisting on the Dth day after the last event
+
+  Among them, the D value of the first event may be 0, and the remaining D values are positive integers.          
+  The values of X are all non-negative integers.
+  The input time series is legal, that is, the number of active stocks is always non-negative.
+
+Output
+  Output an integer from the stock market opening to the last stock exit period. Mr. M's daily average share is multiplied by the number of days.
+  
+Sample Input
+  6
+  2 100
+  2 200
+  5
+  1 150
+  1
+  2 100
+  2 300
+  2 200
+  2
+  3
+  1
+  2
+  *this is the first test case
+
+Sample Output
+  5000    // 5000 = 200.00股 * 25天
+
+Data Scope
+  1 <= N <= 1,000,000
+  0 <= X < 2^31
+  Stock Market has a business period of no more than 2^31 - 1 days
+  
+Resource Scope
+  Time: 1 sec
+  Memory: 256 MB
+  
+Notice
+  [Queue]
