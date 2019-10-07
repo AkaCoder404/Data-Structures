@@ -1,0 +1,36 @@
+Description
+  Zuma is a game that has been popular all over the world. It is played by initially arranging n colored beads on a track, and any three adjacents beads are not exactly the same color. After that, you can launch beads onto the track and add them to the original sequence. Once three or more beads of the same color become adjacent, they disappear immediately. This type of elimination can occur in a chain, during which time you will not be able to launch beads for the time being.
+  The developer has recently prepared to write a playback tool for the game process for the player. They have already completed the record function in the game, and the implementation of the settlement function will be entrusted to you.
+  While recording the game processes, the first step is the initial bead sequence on the track, followed a series of actions that the player does next. Your task is to calculate the bead sequence after a series of operations. 
+  
+Input
+  Line 1: Uppercase letters 'A'~'Z' string, representing the starting bead order, different letters represent different colors.
+  Line 2: One positive integer m, representing the m operations in the playback process. 
+  
+Output
+  Output is 1 line, giving the bead sequence on the track after all operations (and possibly elimations)
+  If there are no beads on teh final track, only one blank is output (ie only one newline is output)
+  
+Sample Input
+  ACCBA
+  5
+  1 B
+  0 A
+  2 B
+  4 C
+  0 A
+Sample Output
+  A
+  
+Data Scope
+  0 <= n <= 500,000
+  0 <= m <= 500,000
+  Inputs are guaranteed to be legal
+  
+Resource Control
+  Time: 1.5 Sec
+  Memory: 256 MB
+  
+Notes
+  The alpha-numeric input of this question, and the initial sequence might be empty, use a robust read-in method.
+ 
