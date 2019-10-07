@@ -1,0 +1,56 @@
+Description
+  The problem of "scheduling" is often involved in the running of the computer. "Fetching" is a good example. Next we will introuce a simplified version of the FIFO scheduling algorithm.
+  
+  There are a lot of operations in our program that involve "fetching" ("访存"). For example, a statement x a[i] represents the value of the memory unit with the address a + i, and the memory access is quite slow, so the computer will often have a relatively small "buffer" (缓冲器) that records the most recently accessed address and its corresponding value (each element of the buffer is a number pair representing the address and value at that memory address). When it comes to memory access, first look in the buffer, and if found, use the result of the buffer as the answer, otherwise, find the result by looking up the memory.
+  
+  Fifo is a relatively simple scheduling strategy, let's describe the process
+  1. When you want to acess the value of an address, it will first look for the address and its corresponding value in the buffer.
+  2. If the address is found in the buffer, the corresponding value is returned and the operation ends.
+  3. If the address is not found, the corresponding value of address is read from the memory, and the address and its corresponding value are attempted to be stored in the buffer.
+  4. If the buffer is not full temporarily, save it directly and the operation ends.
+  5. If the buffer is full, find the element that first entered the buffer and remove it from the buffer, and replace the location of the gap with the current access address and its value.
+
+At the beggining, the buffer is empty, and now there are a series of memory access requests, we want to know that under the premise of using the scheduling algorithm, there will be several times to access the memory.
+
+Input
+  First Line has positive integers n, m. n represents the size of buffer, m represents the number of times fetched.
+  The next row has m positive integers, each representing the address (access) of each visit. Here we simplify the problem, each address must be an integer between 1 and 100
+
+Output
+  Output a number that represents the answer.
+
+Sample Input
+  3 7
+  1 2 1 5 4 4 1
+
+Sample Output
+  5
+
+Sample Description
+  
+  First Access 1: cannot be found in buffer, go to the memory to find, currently accesss 1 time. Buffer now has a content of 1.
+  
+  Then Access 2: can not be found in the buffer, go to the memory to find, currently accessed 2 times. The buffer now has a content of 1 2.
+  
+  Then Access 1: can be found in the buffer
+  
+  Then Access 5: can not be found in the buffer, go to the memory to find, currently accessed 3 times. The buffer now has a content of 1 2 5.
+  
+  Then Access 4: cannot be found in the buffer, go to the memory to find, currently accessed 4 times. Since the buffer is full, we find the first entry into the buffer, and replace it with 4, which now has a content of 4 2 5 according to the algorithm flow.
+  
+  Then Access 4: which can be found in the buffer.
+
+  Then Access 1: can not be found in the buffer, go to the memory to find, currently accessed 5 times. Since the buffer is full, we find the first entry into the buffer 2, replacing it with 1 according to the algorithm flow. The buffer now has a content of 4 1 5
+
+Data Scope
+  1 <= n <= 100
+  1 <= m <= 1000
+  1 <= memory address <= 100
+
+Resource Limits
+  Time: 0.5 sec
+  Memory: 256 MB
+
+Notice
+  Queue (队列)
+  
